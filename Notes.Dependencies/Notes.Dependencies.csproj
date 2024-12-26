@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Notes.BLL.Interfaces\Notes.BLL.Interfaces.csproj" />
+    <ProjectReference Include="..\Notes.BLL\Notes.BLL.csproj" />
+    <ProjectReference Include="..\Notes.DAL.Interfaces\Notes.DAL.Interfaces.csproj" />
+    <ProjectReference Include="..\Notes.DAL.Json\Notes.DAL.Json.csproj" />
+  </ItemGroup>
+
+</Project>

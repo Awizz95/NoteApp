@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<h1 class="text-sm-center">Create your note</h1>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="text">Text:</label>
+        <input type="text"  class="form-control" id="text" name="text" required autofocus/>
+    </div>
+    <div class="form-group">
+        <label for="image">Image (optional):</label>
+        <input type="file" class="form-control" id="image" name="image" accept="image/*"/>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Create Note</button>
+</form>
+<br />
+<a asp-action="Index">Go to StartPage</a>

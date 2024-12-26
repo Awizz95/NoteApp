@@ -1,0 +1,15 @@
+﻿@model Guid
+@{
+    Layout = "_Layout";
+}
+
+<p class="fs-5 fw-normal">Are you sure you want to delete NOTE</p>
+<p class="fw-bold">with ID: @Model.ToString()</p>
+
+<div class="button-container">
+    <form action="/Home/DeleteNote" method="post">
+        <input type="hidden" name="id" value="@Model" />
+        <button type="submit" class="btn btn-success">Yes!</button>
+    </form>
+    <a href="/" class="btn btn-danger">No!</a>
+</div>

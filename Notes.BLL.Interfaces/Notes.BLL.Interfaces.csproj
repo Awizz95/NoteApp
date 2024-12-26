@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Epam.Auth\Epam.Auth.csproj" />
+    <ProjectReference Include="..\Notes.Entities\Notes.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

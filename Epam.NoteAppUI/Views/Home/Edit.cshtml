@@ -1,0 +1,18 @@
+﻿@model Note
+@{
+    Layout = "_Layout";
+}
+
+<h1 class="text-sm-center">Edit your note!</h1>
+
+<form action="/Home/Editnote" method="post">
+    <div class="form-group">
+        <input type="hidden" name="id" value="@Model.ID" />
+        <label for="text">Text:</label>
+        <input type="text"  class="form-control" id="text" name="text" value="@Model.Text" required />
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Save Note</button>
+</form>
+<br />
+<a asp-action="Index">Go to StartPage</a>
+

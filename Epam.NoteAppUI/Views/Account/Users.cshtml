@@ -1,0 +1,32 @@
+﻿@model List<User>
+@{
+    Layout = "_Layout";
+}
+
+<div class="text-center">
+    <h1 class="display-4">There are all users</h1>
+</div>
+<div>
+    @foreach (var user in Model)
+    {
+        <div class="d-flex align-items-center">
+            <p class="mb-0 me-3">Name: @user.Login</p>
+            <img src="@user.ProfilePhoto" alt="image" width="50" height="50" class="me-3"/>
+
+            <div class="button-container">
+                <form method="post" action="/Account/UserNotes?id=@user.Id">
+                    <button class="btn btn-dark" type="submit">Notes</button>
+                </form>
+
+                @if (User.FindFirst(ClaimTypes.Role).Value == "Admin")
+                {
+                    <form method="post" action="/Account/DeleteUser?id=@user.Id">
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+                }
+
+            </div>
+        </div>
+        <hr class="border border-danger border-2 opacity-50" />
+    }
+</div>

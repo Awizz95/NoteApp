@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<h1 class="text-sm-center">Please, login!</h1>
+
+<form action="/Login/Login" method="post">
+    <div class="mb-3">
+        <label class="form-label">Логин:</label>
+        <input class="form-control" type="text" name="login" autofocus />
+        <label class="form-label">Пароль:</label>
+        <input class="form-control" type="text" name="password" />
+    </div>
+    <input class="btn btn-primary" type="submit" value="Отправить" />
+</form>
+

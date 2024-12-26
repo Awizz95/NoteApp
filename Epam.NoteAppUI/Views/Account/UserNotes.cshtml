@@ -1,0 +1,42 @@
+﻿@model List<Note>
+@{
+    Layout = "_Layout";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Notes of @ViewBag.User.Login</h1>
+</div>
+<div>
+    @if (Model.Count == 0)
+    {
+        <p>@ViewBag.User.Login dont have notes!</p>
+    }
+    else
+    {
+        @foreach (var note in Model)
+        {
+            <div>
+                <p>ID: @note.ID</p>
+                <p>Creation Date: @note.CreationDate.ToString("yyyy-MM-dd HH:mm:ss")</p>
+                <p>Text: @note.Text</p>
+            </div>
+            <div>
+                <p>Image: <img src="@note.Image" alt="image" width="200" height="200" /></p>
+            </div>
+
+            @if (User.FindFirst(ClaimTypes.Role).Value == "Admin")
+            {
+                <div class="button-container">
+                    <form method="post" action="/Home/Edit?id=@note.ID">
+                        <button class="btn btn-warning" type="submit">Edit</button>
+                    </form>
+                    <form method="post" action="/Home/Delete?id=@note.ID">
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+                </div>
+            }
+
+            <hr class="border border-danger border-2 opacity-50" />
+        }
+    }
+</div>
